@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <v-header></v-header>
+    <div class="tab">
+      <div class="tab-itme">商品</div>
+      <div class="tab-itme">评论</div>
+      <div class="tab-itme">商家</div>
+    </div>
+    <div class="content">
+      I am content
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import header from './components/header/header'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+export default{
+  components:{
+    "v-header":header
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus">
+#app
+  .tab
+    display:flex
+    width: 100%
+    height: 40px
+    line-height: 40px
+    .tab-itme
+      flex: 1
+      text-align: center
 </style>

@@ -1,0 +1,21 @@
+// 为了border-1px 这个样式通用  定义一个函数    这个函数可以传入一个变量  函数里可以定义一段css代码
+
+border-1px($color)
+    position relative
+    &::after
+        display:block
+        position:absolute
+        left 0
+        bottom 0
+        width 100%
+        border-top:1px solid $color
+        content:""
+border-none()
+    &::after
+        display: none
+bg-image($url)
+    background-image: url($url+"@2x.png")
+    // 根据不同DPR的设备 去选择不同大小图片
+@media(-webkit-min-device-pixel-retio:3),(min-device-pixel-retio:3)
+    .bg-image
+        background-image: url($url+"@3x.png")

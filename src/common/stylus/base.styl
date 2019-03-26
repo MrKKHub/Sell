@@ -1,0 +1,36 @@
+
+body,html
+    margin: 0
+    line-height: 1
+    font-weight: 200
+    font-family: "PingFang SC",'STHeitiSC-Light','Helvetica-Light',arial,sans-serif
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+.clearfix
+    display: inline-block
+    &::after
+        display: block
+        content: ""
+        height:0
+        line-height: 0
+        clear: both
+        visibility: hidden
+
+// 根据不同最小DPR的设备去缩放   -webkit 是兼容写法
+@media(-webkit-min-device-pixel-retio:1.5),(min-device-pixel-retio:1.5)
+    .border-1px
+        &::after
+            -webkit-transform: scaleY(0.7)
+            transform: scaleY(0.7)
+
+@media(-webkit-min-device-pixel-retio:2),(min-device-pixel-retio:2)
+    .border-1px
+        &::after
+            -webkit-transform: scaleY(0.5)
+            transform: scaleY(0.5)
+

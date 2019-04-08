@@ -27,7 +27,7 @@ export default {
       // food是对象 必须通过this,$set才能检测到food属性发生改变
       this.$set(this.food, "count", this.food.count ? this.food.count + 1 : 1);
       // console.log(this.food.count);
-      this.$emit("cart.add", event.target); // 向父组件发出add事件
+      this.$emit("add", event.target); // 向父组件发出add事件
     },
     decreaseCart() {
       this.$set(this.food, "count", this.food.count ? this.food.count - 1 : 0);

@@ -38,7 +38,7 @@
                   <span class="old" v-show="food.oldPrice">￥{{ food.oldPrice}}</span>
                 </div>
                 <div class="cartcontrol-wrapper">
-                  <cartcontrol :food="food"></cartcontrol>
+                  <cartcontrol :food="food" @add="_drop"></cartcontrol>
                 </div>
               </div>
             </li>
@@ -51,6 +51,7 @@
     :selectFoods="selectFoods"
     :delivery-price="seller.deliveryPrice" 
     :min-price="seller.minPrice"></shopcart>
+    <food :food="selectedFood" ref="food"></food>
   </div>
 </template>
 
@@ -58,6 +59,7 @@
 import BScroll from "better-scroll";
 import shopcart from '../shopcart/shopcart.vue'
 import cartcontrol from '../cartcontrol/cartcontrol.vue'
+import food from '../food/food.vue'
 const ERR_OK = 0;
 export default {
   props: {
@@ -146,18 +148,15 @@ export default {
       this.$refs.food.show();
     },
     _drop(dom){
+      // console.log(dom)
       // 调用shopCart组件的事件
       this.$refs.shopcart.drop(dom);
     }
   },
   components:{
     shopcart,
-    cartcontrol
-  },
-  events:{
-    'cart.add'(target){
-      this._drop(target)
-    }
+    cartcontrol,
+    food
   }
 };
 </script>

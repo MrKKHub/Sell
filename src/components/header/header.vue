@@ -55,6 +55,8 @@
             </div>
             <div class="bulletin">
               <p class="content">{{ seller.bulletin}}</p>
+              <br>
+              <p class="my">可爱的素素玲你来啦❥(^_-)</p>
             </div>
           </div>
         </div>
@@ -367,6 +369,11 @@ export default {
             padding: 0 12px;
             line-height: 24px;
             font-size: 12px;
+          }
+          .my{
+            font-size 16px
+            text-align center
+            color red
           }
         }
       }

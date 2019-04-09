@@ -84,7 +84,7 @@ export default {
     }
   }
 
-  $.star-36 {
+  &.star-36 {
     .star-item {
       width: 15px;
       height: 15px;
@@ -109,7 +109,7 @@ export default {
     }
   }
 
-  $.star-24 {
+  &.star-24 {
     .star-item {
       width: 10px;
       height: 10px;
